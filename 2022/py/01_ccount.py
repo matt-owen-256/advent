@@ -15,7 +15,6 @@ def parse_inv():
 def index_inv():
     inv_data = parse_inv()
     indexed_data = {}
-    
     for i, sublist in enumerate(inv_data):
         indexed_data[i] = sum(map(int, sublist))
     return indexed_data
