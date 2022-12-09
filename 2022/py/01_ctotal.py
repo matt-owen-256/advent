@@ -23,7 +23,7 @@ def index_inv():
 
 def calc():
     p_data = index_inv()
-    indexed_sums = [(sum, index) for index, sum in p_data.items()]
+    indexed_sums = [(s, index) for index, s in p_data.items()]
     sorted_sums = sorted(indexed_sums, key=lambda x: x[0], reverse=True)
     t3 = sorted_sums[:3]
     total = sum([x[0] for x in t3])
