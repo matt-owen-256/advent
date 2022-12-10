@@ -20,7 +20,7 @@ def index_inv():
     return indexed_data
 
 
-def calc():
+def calc_sol():
     p_data = index_inv()
     indexed_sums = [(s, index) for index, s in p_data.items()]
     sorted_sums = sorted(indexed_sums, key=lambda x: x[0], reverse=True)
@@ -30,7 +30,7 @@ def calc():
 
 
 def run_seq():
-    print(calc())
+    print(calc_sol())
 
 
 if __name__ == "__main__":

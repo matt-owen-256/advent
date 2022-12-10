@@ -20,7 +20,7 @@ def index_inv():
     return indexed_data
 
 
-def calc():
+def calc_sol():
     p_data = index_inv()
     max_cals = max(p_data.values())
     max_index = [k for k, v in p_data.items() if v == max_cals]
@@ -28,7 +28,7 @@ def calc():
 
 
 def run_seq():
-    print(calc())
+    print(calc_sol())
 
 
 if __name__ == "__main__":
