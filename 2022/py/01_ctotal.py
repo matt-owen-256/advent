@@ -21,17 +21,14 @@ def index_inv():
 
 
 def calc_sol():
-    p_data = index_inv()
-    indexed_sums = [(s, index) for index, s in p_data.items()]
+    t_data = index_inv()
+    indexed_sums = [(s, index) for index, s in t_data.items()]
     sorted_sums = sorted(indexed_sums, key=lambda x: x[0], reverse=True)
     t3 = sorted_sums[:3]
     total = sum([x[0] for x in t3])
-    return t3, total
-
-
-def run_seq():
-    print(calc_sol())
+    sol = t3, total
+    print(sol)
 
 
 if __name__ == "__main__":
-    run_seq()
+    calc_sol()

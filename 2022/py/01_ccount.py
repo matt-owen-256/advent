@@ -21,15 +21,12 @@ def index_inv():
 
 
 def calc_sol():
-    p_data = index_inv()
-    max_cals = max(p_data.values())
-    max_index = [k for k, v in p_data.items() if v == max_cals]
-    return max_index, max_cals
-
-
-def run_seq():
-    print(calc_sol())
+    t_data = index_inv()
+    max_cals = max(t_data.values())
+    max_index = [k for k, v in t_data.items() if v == max_cals]
+    sol = max_index, max_cals
+    print(sol)
 
 
 if __name__ == "__main__":
-    run_seq()
+    calc_sol()
