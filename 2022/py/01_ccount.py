@@ -4,11 +4,11 @@ def parse_inv():
     with open('../data/inventory.txt', 'r') as inv_file:
         entries = [[]]
         for line in inv_file:
-            line = line.strip()
-            if not line:
+            raw_line = line.strip()
+            if not raw_line:
                 entries.append([])
             else:
-                entries[-1].append(line)
+                entries[-1].append(raw_line)
     return entries
 
 
