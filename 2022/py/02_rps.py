@@ -31,7 +31,6 @@ def calc_score():
     }
 
     t_data = calc_strat()
-
     score = 0
     for item in t_data:
         if item[1] in score_map:
