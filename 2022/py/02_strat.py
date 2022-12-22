@@ -46,8 +46,8 @@ def calc_sol():
             score += 6
         if item[1] == 'D':
             score += 3
-    return score
+    print(score)
     
 
 if __name__ == "__main__":
-    print(calc_sol())
+    calc_sol()
