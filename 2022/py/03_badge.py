@@ -28,6 +28,7 @@ def find_badge():
             p_intersects.append(char)
     return p_intersects
 
+
 def calc_priority():
     t_data = find_badge()
     char_dict = {chr(i): i - 96 for i in range(97, 123)}
