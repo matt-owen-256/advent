@@ -35,7 +35,7 @@ def find_dup():
     for k in dups:
         for char in k:
             p_dups.append(char)
-    return(p_dups)
+    return p_dups
 
 
 def calc_priority():
