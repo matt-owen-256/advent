@@ -1,7 +1,7 @@
 
 
 def parse_contents():
-    with open('../data/contents-ex.txt', 'r') as contents_file:
+    with open('../data/contents.txt', 'r') as contents_file:
         entries = []
         for line in contents_file:
             raw_line = line.strip()
@@ -10,7 +10,6 @@ def parse_contents():
 
 
 def calc_contents():
-    # split string in half i.e. each compartment
     r_data = parse_contents()
     p_data = []
     for item in r_data:
@@ -22,13 +21,34 @@ def calc_contents():
         p_data.append(i)
     return p_data
 
-    # find item in both compartments
-    # calculate priorities; a->z 1->26 A->Z 27->52
+
+def find_dup():
+    t_data = calc_contents()
+    dups = []
+    for j in t_data:
+        j0 = set(j[0])
+        j1 = set(j[1])
+        x = j0.intersection(j1)
+        dups.append(x)
+
+    p_dups = []
+    for k in dups:
+        for char in k:
+            p_dups.append(char)
+    return(p_dups)
+
+
+def calc_priority():
+    t_data = find_dup()
+    char_dict = {chr(i): i - 96 for i in range(97, 123)}
+    char_dict.update({chr(i): i - 38 for i in range(65, 91)})
+    int_list = [char_dict[char] for char in t_data]
+    return sum(int_list)
 
 
 def calc_sol():
-    t_data = calc_contents()
-    print(t_data)
+    sol = calc_priority()
+    print(sol)
 
 
 if __name__ == "__main__":
