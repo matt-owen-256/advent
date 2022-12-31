@@ -11,7 +11,7 @@ def parse_strat():
         return assigns
 
 
-def calc_range():
+def calc_sol():
     t_data = parse_strat()
     count = 0
     for item in t_data:
@@ -19,11 +19,7 @@ def calc_range():
         t1 = set(range(item[2], item[3]+1))
         if t0.issuperset(t1) or t1.issuperset(t0) is True:
             count += 1
-    return count
-
-
-def calc_sol():
-    sol = calc_range()
+    sol = count
     print(sol)
 
 

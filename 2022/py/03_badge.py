@@ -29,16 +29,12 @@ def find_badge():
     return p_intersects
 
 
-def calc_priority():
+def calc_sol():
     t_data = find_badge()
     char_dict = {chr(i): i - 96 for i in range(97, 123)}
     char_dict.update({chr(i): i - 38 for i in range(65, 91)})
     int_list = [char_dict[char] for char in t_data]
-    return sum(int_list)
-
-
-def calc_sol():
-    sol = calc_priority()
+    sol = sum(int_list)
     print(sol)
 
 

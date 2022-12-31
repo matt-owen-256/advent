@@ -20,7 +20,7 @@ def calc_strat():
     return p_data
 
 
-def calc_score():
+def calc_sol():
     w_lst = ['SR', 'RP', 'PS']
     d_lst = ['RR', 'PP', 'SS']
 
@@ -39,11 +39,7 @@ def calc_score():
             score += 6
         if item in d_lst:
             score += 3
-    return score
-
-
-def calc_sol():
-    sol = calc_score()
+    sol = score
     print(sol)
 
 
