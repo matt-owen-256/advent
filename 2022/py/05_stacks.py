@@ -2,16 +2,11 @@
 
 def parse_start():
     with open('../data/start-ex.txt', 'r') as start_file:
-        grid = []
-        col = []
+        lines = []
         for line in start_file:
-            if len(col) <= 4:
-                l_str = str(line)
-                p_str = l_str.replace(l_str[3], '', 1)
-                col.append(p_str)
-                grid.append(col)
-                col = []
-        return grid
+            p_line = [line[i:i+4] for i in range(0, len(line), 4)]
+            lines.append(p_line)
+        return lines
 
 
 # def parse_proc():
@@ -19,8 +14,8 @@ def parse_start():
 
 
 def calc_grid():
-    g = parse_start()
-    return g
+    t = parse_start()
+    return t
 
 
 def calc_sol():
